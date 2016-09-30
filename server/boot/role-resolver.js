@@ -6,7 +6,7 @@ module.exports = function(app) {
   Role.registerResolver('gameOwner', function(role, context, cb) {
     var gameId = context.modelId;
     var userId = context.accessToken.userId;
-    console.log("KEN> gameOwner resolver' +
+    console.log('KEN> gameOwner resolver' +
       ', modelName=' + context.modelName +
       ', gameId=' + gameId +
       ', userId=' + userId);
@@ -28,7 +28,7 @@ module.exports = function(app) {
 
     app.models.Game.findById(context.modelId, {
       include: {
-        relation: "gameMasters",
+        relation: 'gameMasters',
         scope: {
           where: {id: userId}
         }
@@ -40,6 +40,6 @@ module.exports = function(app) {
     .catch(function(err) {
       console.log(err);
       return cb(null, false);
-    })
+    });
   });
 };

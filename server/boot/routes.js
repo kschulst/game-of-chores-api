@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(app) {
   var router = app.loopback.Router();
 
@@ -6,8 +8,8 @@ module.exports = function(app) {
   });
 
   router.post('/projects', function(req, res) {
-    var email = "ks@udp.no";
-    var password = "opensesame";
+    var email = 'ks@udp.no';
+    var password = 'opensesame';
 
     app.models.GameMaster.login({
       email: email,

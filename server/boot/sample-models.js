@@ -1,7 +1,8 @@
+'use strict';
+
 var async = require('async');
 
 module.exports = function(app) {
-
   // data sources
   var mongoDs = app.dataSources.mongoDbLocal;
 
@@ -17,7 +18,7 @@ module.exports = function(app) {
       console.log('> created GameMasters');
     });
 
-     createPlayers(results.games, function(err) {
+    createPlayers(results.games, function(err) {
       if (err) throw err;
       console.log('> created Players');
     });
@@ -30,7 +31,6 @@ module.exports = function(app) {
       if (err) throw err;
       console.log('> created Chores');
     });
-
   });
 
   function createRoles(cb) {
@@ -42,8 +42,8 @@ module.exports = function(app) {
     });
     // TODO: Cleanup RoleMappings etc
     var lbTables = ['User', 'RoleMapping']; //['User', 'AccessToken', 'ACL', 'RoleMapping']
-    mongoDs.automigrate(lbTables , function(err) {
-    })
+    mongoDs.automigrate(lbTables, function(err) {
+    });
   }
 
   function createGames(cb) {
@@ -65,14 +65,14 @@ module.exports = function(app) {
 
       games[0].gameMasters.create([
         {id: 'gm1', name: 'Kenneth', username: 'kenneth', email: 'ks@udp.no', password: 'opensesame'},
-        {id: 'gm2', "name": 'Kristin', username: 'kristin', email: 'kristin@leine.cc', password: 'opensesame'}
+        {id: 'gm2', name: 'Kristin', username: 'kristin', email: 'kristin@leine.cc', password: 'opensesame'}
       ], function(err, gameMasters) {
         assignRole(gameMasters, 'gm');
       });
 
       games[1].gameMasters.create([
         {id: 'gm3', name: 'Bjørn Arve', username: 'bjornarve', email: 'bal@udp.no', password: 'opensesame'},
-        {id: 'gm4', "name": 'Benedikte', username: 'benedikte', email: 'ssdlkfjsdlfkjsdlfk@sdfsdlfkjsdfsdflkjsdfkld.com', password: 'opensesame'}
+        {id: 'gm4', name: 'Benedikte', username: 'benedikte', email: 'ssdlkfjsdlfkjsdlfk@sdfsdlfkjsdfsdflkjsdfkld.com', password: 'opensesame'}
       ], function(err, gameMasters) {
         assignRole(gameMasters, 'gm');
       });
@@ -86,15 +86,15 @@ module.exports = function(app) {
       if (err) return cb(err);
 
       games[0].players.create([
-        {id: 'p1', "name": 'Caroline', username: 'caroline',  password: 'opensesame', email: 'devnull@game-of-chores.com'},
-        {id: 'p2', "name": 'Jonathan', username: 'jonathan',  password: 'opensesame', email: 'devnull@game-of-chores.com'}
+        {id: 'p1', name: 'Caroline', username: 'caroline',  password: 'opensesame', email: 'devnull@game-of-chores.com'},
+        {id: 'p2', name: 'Jonathan', username: 'jonathan',  password: 'opensesame', email: 'devnull@game-of-chores.com'}
       ], function(err, players) {
         assignRole(players, 'player');
       });
 
       games[1].players.create([
-        {id: 'p3', "name": 'Martinius', username: 'martinius',  password: 'opensesame', email: 'devnull@game-of-chores.com'},
-        {id: 'p4', "name": 'Leander', username: 'leander',  password: 'opensesame', email: 'devnull@game-of-chores.com'}
+        {id: 'p3', name: 'Martinius', username: 'martinius',  password: 'opensesame', email: 'devnull@game-of-chores.com'},
+        {id: 'p4', name: 'Leander', username: 'leander',  password: 'opensesame', email: 'devnull@game-of-chores.com'}
       ], function(err, players) {
         assignRole(players, 'player');
       });
@@ -133,7 +133,7 @@ module.exports = function(app) {
 
       games[1].chores.create([
         {id: 'ch4', name: 'Pusse tenner', rewards: [{shortname: 'XP', count: 100}]},
-        {id: 'ch5', name: 'Gå med søpla', rewards: [{shortname: 'XP', count: 100}]},
+        {id: 'ch5', name: 'Gå med søpla', rewards: [{shortname: 'XP', count: 100}]}
       ]);
     });
 
@@ -142,7 +142,7 @@ module.exports = function(app) {
 
   function assignRole(users, rolename) {
     app.models.Role.find(
-      {"where": {"name": rolename}}
+      {where: {name: rolename}}
     , function(err, roles) {
       if (err) return cb(err);
       if (roles.length !== 1) throw err;
@@ -154,11 +154,10 @@ module.exports = function(app) {
           principalId: user.id,
           roleId: role.id
         }, function(err, roleMapping) {
-          if (err) {return console.log(err);}
+          if (err) return console.log(err);
           console.log('User (' + user.name + ') assigned RoleID ' + role.name  + ' (' + role.id + ')');
-        })
-      })
+        });
+      });
     });
   }
-
 };
