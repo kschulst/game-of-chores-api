@@ -1,0 +1,36 @@
+{
+  "name": "PlayerChore",
+  "base": "Chore",
+  "strict": false,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false
+    },
+    "playerId": {
+      "type": "string"
+    },
+    "repetition": {
+      "type": [
+        "string"
+      ]
+    },
+    "requireApproval": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "approvedBy": {
+      "type": "hasOne",
+      "model": "GameMaster"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

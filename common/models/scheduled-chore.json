@@ -1,0 +1,35 @@
+{
+  "name": "ScheduledChore",
+  "base": "Chore",
+  "strict": false,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false
+    },
+    "playerId": {
+      "type": "string"
+    },
+    "deadlineTimestamp": {
+      "type": "date"
+    },
+    "doneTimestamp": {
+      "type": "date"
+    },
+    "approvedTimestamp": {
+      "type": "date"
+    },
+    "approvedBy": {
+      "type": "string"
+    }
+  },
+  "relations": {},
+  "validations": [],
+  "acls": [],
+  "methods": {}
+}

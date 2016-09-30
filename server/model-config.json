@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mongoDbLocal"
+  },
+  "AccessToken": {
+    "dataSource": "mongoDbLocal",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongoDbLocal",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongoDbLocal",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongoDbLocal",
+    "public": false
+  },
+  "Game": {
+    "dataSource": "mongoDbLocal",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Reward": {
+    "dataSource": "mongoDbLocal",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Chore": {
+    "dataSource": "mongoDbLocal",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "PlayerChore": {
+    "dataSource": "mongoDbLocal",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ScheduledChore": {
+    "dataSource": "mongoDbLocal",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Achievement": {
+    "dataSource": "mongoDbLocal",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "GameMaster": {
+    "dataSource": "mongoDbLocal",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Player": {
+    "dataSource": "mongoDbLocal",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  }
+}

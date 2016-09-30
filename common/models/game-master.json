@@ -1,0 +1,30 @@
+{
+  "name": "GameMaster",
+  "base": "User",
+  "strict": false,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "emailVerificationRequired": false
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "game": {
+      "type": "belongsTo",
+      "model": "Game",
+      "foreignKey": "gameId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,15 @@
+{
+  "memDb": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongoDbLocal": {
+    "name": "mongoDbLocal",
+    "host": "localhost",
+    "port": 27017,
+    "database": "game-of-chores_dev",
+    "user": "",
+    "password": "",
+    "connector": "mongodb"
+  }
+}
