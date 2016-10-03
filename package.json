@@ -1,16 +1,18 @@
 {
   "name": "game-of-chores-api",
   "version": "1.0.0",
+  "engines": {
+    "node": "6.7.0"
+  },
   "main": "server/server.js",
   "scripts": {
     "lint": "eslint .; exit 0;",
     "start": "nodemon --exec babel-node .",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint && nsp check",
+    "validate": "npm ls"
   },
   "dependencies": {
     "async": "^2.0.1",
-    "babel-cli": "^6.16.0",
-    "babel-preset-es2015": "^6.16.0",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "helmet": "^2.2.0",
@@ -22,14 +24,22 @@
     "strong-error-handler": "^1.0.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
     "eslint": "^3.6.1",
     "eslint-config-loopback": "^4.0.0",
-    "nsp": "^2.1.0"
+    "nsp": "^2.1.0",
+    "precommit-hook-eslint": "^3.0.0"
   },
   "repository": {
     "type": "",
     "url": ""
   },
   "license": "UNLICENSED",
-  "description": "game-of-chores-api"
+  "description": "game-of-chores-api",
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ]
 }
