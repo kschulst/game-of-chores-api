@@ -14,68 +14,68 @@
     ]
   },
   "User": {
-    "dataSource": "mongoDbLocal"
+    "dataSource": "mongoDb"
   },
   "AccessToken": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": false
   },
   "ACL": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": false
   },
   "Role": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": false
   },
   "Game": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "Reward": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "Chore": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "PlayerChore": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "ScheduledChore": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "Achievement": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "GameMaster": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "Player": {
-    "dataSource": "mongoDbLocal",
+    "dataSource": "mongoDb",
     "public": true,
     "$promise": {},
     "$resolved": true

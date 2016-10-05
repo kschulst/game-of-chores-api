@@ -4,7 +4,7 @@ var async = require('async');
 
 module.exports = function(app) {
   // data sources
-  var mongoDs = app.dataSources.mongoDbLocal;
+  var mongoDs = app.dataSources.mongoDb;
 
   // create all models
   async.parallel({
