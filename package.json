@@ -2,7 +2,7 @@
   "name": "game-of-chores-api",
   "version": "1.0.0",
   "engines": {
-    "node": "6.7.0"
+    "node": "5.12.0"
   },
   "main": "server/server.js",
   "scripts": {
