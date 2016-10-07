@@ -1,5 +1,10 @@
 {
   "loopback-component-explorer": {
-    "mountPath": "/explorer"
+    "mountPath": "/explorer",
+    "uiDirs": "server/explorer",
+    "apiInfo": {
+      "title": "Game of Chores API",
+      "description": "Cynical gamification that transforms lazy kids into home makers"
+    }
   }
 }
