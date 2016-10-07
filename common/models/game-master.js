@@ -1,11 +1,11 @@
 'use strict';
 
 module.exports = function(GameMaster) {
-  GameMaster.disableRemoteMethod('__count__accessTokens', false);
-  GameMaster.disableRemoteMethod('__create__accessTokens', false);
-  GameMaster.disableRemoteMethod('__delete__accessTokens', false);
-  GameMaster.disableRemoteMethod('__destroyById__accessTokens', false);
-  GameMaster.disableRemoteMethod('__findById__accessTokens', false);
-  GameMaster.disableRemoteMethod('__get__accessTokens', false);
-  GameMaster.disableRemoteMethod('__updateById__accessTokens', false);
+  GameMaster.disableRemoteMethodByName('prototype.__count__accessTokens');
+  GameMaster.disableRemoteMethodByName('prototype.__create__accessTokens');
+  GameMaster.disableRemoteMethodByName('prototype.__delete__accessTokens');
+  GameMaster.disableRemoteMethodByName('prototype.__destroyById__accessTokens');
+  GameMaster.disableRemoteMethodByName('prototype.__findById__accessTokens');
+  GameMaster.disableRemoteMethodByName('prototype.__get__accessTokens');
+  GameMaster.disableRemoteMethodByName('prototype.__updateById__accessTokens');
 };
